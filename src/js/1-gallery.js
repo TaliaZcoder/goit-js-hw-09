@@ -92,3 +92,6 @@ const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionDelay: 250,
 });
+
+console.log('gallery js loaded');
+console.log(galleryEl);
