@@ -68,10 +68,11 @@ const images = [
 ];
 
 const galleryEl = document.querySelector(".gallery");
+if (galleryEl) {
 
-const galleryMarkup = images
-  .map(({ preview, original, description }) => {
-    return `
+  const galleryMarkup = images
+    .map(({ preview, original, description }) => {
+      return `
       <li class="gallery-item">
         <a class="gallery-link" href="${original}">
           <img
@@ -82,16 +83,14 @@ const galleryMarkup = images
         </a>
       </li>
     `;
-  })
-  .join("");
+    })
+    .join("");
 
-galleryEl.insertAdjacentHTML("beforeend", galleryMarkup);
+  galleryEl.insertAdjacentHTML("beforeend", galleryMarkup);
 
-const lightbox = new SimpleLightbox(".gallery a", {
-  captions: true,
-  captionsData: "alt",
-  captionDelay: 250,
-});
-
-console.log('gallery js loaded');
-console.log(galleryEl);
+  const lightbox = new SimpleLightbox(".gallery a", {
+    captions: true,
+    captionsData: "alt",
+    captionDelay: 250,
+  });
+}
